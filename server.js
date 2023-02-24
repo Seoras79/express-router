@@ -2,6 +2,16 @@ const express = require("express")
 const app = express()
 const port = 3000
 
+//  require the fruits.js file
+const fruitsRouter = require("./routers/fruits.js")
+// require the users.js file
+const usersRouter = require("./routers/users.js")
+
+// use the fruits.js file
+app.use("/fruits", fruitsRouter);
+// use the users.js file
+app.use("/users", usersRouter);
+
 // List of Users
 let users = [
     {
@@ -41,8 +51,6 @@ let fruits = [
         color: "Purple"
     },
 ]
-
-// Express Routes
 
 
 
